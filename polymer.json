@@ -1,0 +1,11 @@
+{
+  "npm": true,
+  "extraDependencies": [
+    "sjcl.js"
+  ],
+  "lint": {
+    "rules": [
+      "polymer-3"
+    ]
+  }
+}
