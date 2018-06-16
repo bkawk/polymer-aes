@@ -1,5 +1,9 @@
 {
   "name": "polymer-aes",
+  "version": "1.0.0",
+  "author": "@bkawk",
+  "license": "MIT",
+  "repository": "https://github.com/bkawk/polymer-aes",
   "main": "polymer-aes.js",
   "dependencies": {
     "@polymer/polymer": "^3.0.0",
