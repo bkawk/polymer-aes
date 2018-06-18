@@ -35,6 +35,11 @@ class PolymerAes extends PolymerElement {
         type: String,
         observer: '_start',
       },
+      error: {
+        type: String,
+        notify: true,
+        reflectToAttribute: true,
+      },
       result: {
         type: String,
         notify: true,
@@ -83,8 +88,13 @@ class PolymerAes extends PolymerElement {
           resolve(this.result)
         }
         catch(err) {
-          this.error = err;
-          reject(err)
+          if(err.message == "gcm: tag doesn't match"){
+            this.error = 'wrong password'
+            reject('wrong password');
+          } else {
+            this.error = err;
+            reject(this.error)
+          }
         }
     });
   }
@@ -111,8 +121,13 @@ class PolymerAes extends PolymerElement {
           resolve(this.result)
         }
         catch(err) {
-          this.error = err;
-          reject(err)
+          if(err.message == "gcm: tag doesn't match"){
+            this.error = 'wrong password'
+            reject('wrong password');
+          } else {
+            this.error = err;
+            reject(this.error)
+          }
         }
     });
   }
